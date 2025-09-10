@@ -65,3 +65,28 @@ def quadratic(a, b, c):
                 If there is no real root, x1 == x2 == None.
     """
     # TODO: implement the stable quadratic equation solver here
+    # determine the sign of b
+    if b >= 0:
+        sign = 1
+    else:
+        sign = -1
+
+    # determine the roots
+    # no real roots exist
+    if (b**2 - 4*a*c) < 0:
+        x1, x2 = None, None
+
+    # only one real root exists
+    if (b**2 - 4*a*c) == 0:
+        x1 = (-b) / (2*a)
+        x2 = None
+
+    # two real roots exist
+    if (b**2 - 4*a*c) > 0:
+        x1 = (-b - sign * (b**2 - 4*a*c)**(0.5)) / (2*a)
+        x2 = (c / a) / x1
+
+        if x2 < x1:
+            x1, x2 = x2, x1
+    
+    return
