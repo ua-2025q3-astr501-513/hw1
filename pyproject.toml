@@ -16,8 +16,9 @@
 
 [project]
 name = "hw1"
-version = ...
+version = 1.0
+license = { file = "LICENSE" }
 dependencies = [
     "pytest",  # must include pytest because we use it for autograding
-    ...
+    "numpy"
 ]
