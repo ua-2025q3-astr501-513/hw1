@@ -68,45 +68,22 @@ def multibit_adder(A, B, carrybit=False):
 # assigment.
 
 def multibit_negative(A):
-    """Multi-bit integer negative operator
+    # NOT B
+    inverted = [NOT(bit) for bit in A]
+    one = [1] + [0] * (len(A) - 1)
+    neg = multibit_adder(inverted, one)
+    return neg[:len(A)]
 
-    This function take the binary number A and return negative A using
-    two's complement.
-    In other words, if the input
-        A = 3 = 0b011,
-    then the output is
-        -A = -3 = 0b101.
-
-    Args:
-        A: input number in binary represented as a python list, with
-           the least significant digit be the first.
-           That is, the binary 0b011 should be given by [1,1,0].
-
-    Returns:
-        Negative A using two's complement represented as a python
-        list, with the least significant digit be the first.
-
-    """
-    # TODO: implement the function here
-
-# We are now ready to implement subtraction using multibit_adder() and
-# multibit_negative().
 
 def multibit_subtractor(A, B):
-    """Multi-bit integer subtraction operator
+    # A - B = A + (-B)
+    negB = multibit_negative(B)
+    #negB = multibit_negative(B)
+    result = multibit_adder(A, negB)
 
-    This function take the binary numbers A and B, and return A - B.
-    Be careful on how the carrying bit is handled in multibit_adder().
-    Make sure that when A == B, the result A - B should be zero.
+    return result[:len(A)]
 
-    Args:
-        A, B: input number in binary represented as a python list,
-           with the least significant digit be the first.
-           That is, the binary 0b011 should be given by [1,1,0].
-
-    Returns:
-        A - B represented as a python list, with the least significant
-        digit be the first.
-
-    """
-    # TODO: implement the function here
+a = [0,1,0]
+b = [0,1,1]
+c = multibit_subtractor(b, a)
+print(c)
