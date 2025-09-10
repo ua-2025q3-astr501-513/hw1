@@ -39,7 +39,7 @@
 # TODO: Edit this sample idea.
 
 - topic: Numerical Linear Algebra
-  idea:  edit Develop a fast matrix multiplication algorithm to reduce
+  idea:  Develop a fast matrix multiplication algorithm to reduce
          energy consumption during deep learning inference.
 
 # TODO: Add two more project ideas below, following the same format as
@@ -48,7 +48,13 @@
 # "topic" must be one of the listed course topics.
 
 - topic: Fourier Transform and Spectral Analysis
-  idea:  Develop a .
+  idea:  Develop a way to do fast fourier transform for spectrum.
          
 - topic: PDE Solvers
-  idea:  Develop a .
+  idea:  Develop a way to solve for PDE for some GR problems.
+  
+  
+- topic: Numerical and Automatic Derivatives
+  idea:  Develop a fast matrix multiplication algorithm to reduce
+         energy consumption during deep learning inference.
+  
