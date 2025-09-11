@@ -67,13 +67,13 @@ def quadratic(a, b, c):
                 If there is no real root, x1 == x2 == None.
     """
     # TODO: implement the stable quadratic equation solver here
-        
+      
     root = b**2 - 4*a*c
     
     # Checking if the roots are real
     if root < float(0):
         x_1, x_2 = None, None
-        
+    ''' 
     elif a is None or a == 0:
     
         if b is None or b == 0:
@@ -123,7 +123,7 @@ def quadratic(a, b, c):
         # When they are equal there is only 1 real root
         else:
             x_1, x_2 = x_1_form, None
-            '''
+        
             
     return x_1, x_2
 
