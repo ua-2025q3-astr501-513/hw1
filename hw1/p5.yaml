@@ -38,21 +38,18 @@
 
 # TODO: Edit this sample idea.
 
+- topic: ODE Integrators
+  idea:  Simulate multiple objects (such as a planet around a star or a binary system) orbiting each other in space using laws of gravitation.
+
 - topic: Numerical Linear Algebra
-  idea:  Develop a fast matrix multiplication algorithm to reduce
-         energy consumption during deep learning inference.
+  idea:  Simulate the 2D Ising Model as an array of spin up and spin down particles.
+
+- topic: ODE Integrators
+  idea:  Simulate stellar structure by solving various differential equations, such as hydrostatic equilibrium, mass continuity, energy transfer, and/or equations of state.
 
 # TODO: Add two more project ideas below, following the same format as
 # the example above.
 # Remember to ensure that each idea is distinct and concise, and each
 # "topic" must be one of the listed course topics.
-
-- topic: Fourier Transform and Spectral Analysis
-  idea:  Develop a way to do fast fourier transform for spectrum
-         analysis with the new JWST data to check for red shift.
-         
-- topic: PDE Solvers
-  idea:  Develop an algorithm to solve for PDE for calculating the
-         halo mass functiom, and incoporate into cosmology dependence.
 
   
