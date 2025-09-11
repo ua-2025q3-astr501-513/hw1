@@ -91,20 +91,21 @@ def multibit_negative(A):
     
     n = len(A)
     
-    l = [1]
-    for i in range(1, n):
-        l.append(0)
-    
-    S = []
+    # Invert all the bits
+    INV = []
     for i in range(n):
         s = NOT(A[i])
-        s.append(S)
+        s.append(INV)
         
-    S = multibit_adder(S, l)
+    # Setting the "1" list to add to the inverts
+    l = [1] # So the first number will be 1
+    for i in range(1, n):
+        l.append(0)
         
-    #S[:0] = XOR(S[:0], 1)
+    # Add 1 to the LSB
+    Neg_A = multibit_adder(INV, l)
     
-    return S
+    return Neg_A
 
 # We are now ready to implement subtraction using multibit_adder() and
 # multibit_negative().
@@ -127,7 +128,13 @@ def multibit_subtractor(A, B):
 
     """
     # TODO: implement the function here
-    S = multibit_adder(A, multibit_negative(B))
     
-    return S
+    # take the binary number B and return negative B
+    Neg_B = multibit_negative(B)
+    
+    # Adding A to -B becomes A - B
+    Diff = multibit_adder(A, Neg_B)
+    
+    return Diff
+    
         
