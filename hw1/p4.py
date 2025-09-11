@@ -97,6 +97,8 @@ class CoupledOscillators:
         modal = self.M0 * np.cos(self.Omega * t)
 
         d = self.V @ modal
+        
+        return d
 
 if __name__ == "__main__":
 
