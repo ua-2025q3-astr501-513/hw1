@@ -87,7 +87,6 @@ def multibit_negative(A):
         list, with the least significant digit be the first.
 
     """
-    # TODO: implement the function here
     
 
     n = len(A)
@@ -130,7 +129,6 @@ def multibit_subtractor(A, B):
         digit be the first.
 
     """
-    # TODO: implement the function here
 
     # take the binary number B and return negative B
     Neg_B = multibit_negative(B)
