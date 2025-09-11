@@ -95,7 +95,7 @@ def multibit_negative(A):
     INV = []
     for i in range(n):
         s = NOT(A[i])
-        s.append(INV)
+        INV.append(s)
         
     # Setting the "1" list to add to the inverts
     l = [1] # So the first number will be 1
