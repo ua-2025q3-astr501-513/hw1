@@ -48,13 +48,11 @@
 # "topic" must be one of the listed course topics.
 
 - topic: Fourier Transform and Spectral Analysis
-  idea:  Develop a way to do fast fourier transform for spectrum.
+  idea:  Develop a way to do fast fourier transform for spectrum
+         analysis with the new JWST data to check for red shift.
          
 - topic: PDE Solvers
-  idea:  Develop a way to solve for PDE for some GR problems.
-  
-  
-- topic: Numerical and Automatic Derivatives
-  idea:  Develop a fast matrix multiplication algorithm to reduce
-         energy consumption during deep learning inference.
+  idea:  Develop an algorithm to solve for PDE for calculating the
+         halo mass functiom, and incoporate into cosmology dependence.
+
   

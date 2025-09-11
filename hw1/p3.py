@@ -31,6 +31,8 @@
 # to overcome catastrophic cancellation.
 # Please make sure that you take care of all the special cases.
 
+import numpy as np
+
 def quadratic(a, b, c):
     """Numerically stable quadratic equation solver
 
@@ -65,28 +67,27 @@ def quadratic(a, b, c):
                 If there is no real root, x1 == x2 == None.
     """
     # TODO: implement the stable quadratic equation solver here
-    # determine the sign of b
-    if b >= 0:
-        sign = 1
-    else:
-        sign = -1
-
-    # determine the roots
-    # no real roots exist
-    if (b**2 - 4*a*c) < 0:
-        x1, x2 = None, None
-
-    # only one real root exists
-    if (b**2 - 4*a*c) == 0:
-        x1 = (-b) / (2*a)
-        x2 = None
-
-    # two real roots exist
-    if (b**2 - 4*a*c) > 0:
-        x1 = (-b - sign * (b**2 - 4*a*c)**(0.5)) / (2*a)
-        x2 = (c / a) / x1
-
-        if x2 < x1:
-            x1, x2 = x2, x1
+        
+    root = b**2 - 4*a*c
     
-    return
+    # Checking if the roots are real
+    if root < float(0):
+        x_1, x_2 = None, None
+    
+    # If the roots are real, we can implement this formula to avoid cancellation
+    else:
+        x_1_form = (-b - np.sign(b) * np.sqrt(b**2 - 4*a*c))/(2*a)
+        x_2_form = c/(a * x_1_form)
+        
+        # When there are 2 real roots
+        if x_1_form < x_2_form:
+            x_1, x_2 = x_1_form, x_2_form
+            
+        elif x_1_form > x_2_form:
+            x_1, x_2 = x_2_form, x_1_form
+        
+        # When they are equal there is only 1 real root
+        else:
+            x_1, x_2 = x_1_form, None
+            
+    return x_1, x_2
