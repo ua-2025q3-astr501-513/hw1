@@ -89,7 +89,7 @@ def multibit_negative(A):
     """
     # TODO: implement the function here
     
-'''
+
     n = len(A)
     
     # Invert all the bits
@@ -108,13 +108,7 @@ def multibit_negative(A):
     
     return Neg_A
     
-'''
 
-    not_A = [NOT(A[i]) for i in range(len(A))]
-    one = [0 for i in range(len(A))]
-    one[0] = 1
-    
-    return multibit_adder(one,not_A)
 
 # We are now ready to implement subtraction using multibit_adder() and
 # multibit_negative().
@@ -137,7 +131,7 @@ def multibit_subtractor(A, B):
 
     """
     # TODO: implement the function here
- '''
+
     # take the binary number B and return negative B
     Neg_B = multibit_negative(B)
     
@@ -145,7 +139,5 @@ def multibit_subtractor(A, B):
     Diff = multibit_adder(A, Neg_B)
     
     return Diff
-    '''
+
     
-    neg_B = multibit_negative(B)
-    return multibit_adder(A,neg_B)
