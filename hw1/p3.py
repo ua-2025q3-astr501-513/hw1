@@ -109,6 +109,7 @@ def quadratic(a, b, c):
         
     '''
     # If the roots are real, we can implement this formula to avoid cancellation
+    
     else:
         x_1_form = (-b - np.sign(b) * np.sqrt(b**2 - 4*a*c))/(2*a)
         x_2_form = c/(a * x_1_form)
