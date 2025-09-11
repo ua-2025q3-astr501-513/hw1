@@ -19,5 +19,6 @@ name = "hw1",
 version = "2.3.2",
 dependencies = [
     "pytest",  # must include pytest because we use it for autograding
-    "numpy"
+    "numpy",
+    "scipy"
 ]
