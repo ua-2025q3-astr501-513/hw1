@@ -1,4 +1,4 @@
-≈# ASTR 513 Homework Set #1
+# ASTR 513 Homework Set #1
 #
 # Part 1.
 #
@@ -15,8 +15,8 @@
 # You may test your work by running `pip install -e .`
 
 [project]
-name = "hw1",
-version = "2.3.2",
+name = "hw1"
+version = "2.3.2"
 dependencies = [
     "pytest",  # must include pytest because we use it for autograding
     "numpy",
