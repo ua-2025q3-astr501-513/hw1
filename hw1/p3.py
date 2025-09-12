@@ -67,63 +67,45 @@ def quadratic(a, b, c):
                 If there is no real root, x1 == x2 == None.
     """
     # TODO: implement the stable quadratic equation solver here
-      
+    
+    # Defining the formulas
     root = b**2 - 4*a*c
+    x_1_form = (-b + np.sign(b)* np.sqrt(root))/(2*a)
+    x_2_form = c/(a * x_1_form)
     
-    # Checking if the roots are real
-    if root < float(0):
-        x_1, x_2 = None, None
-    ''' 
-    elif a is None or a == 0:
-    
+    # First
+    if a is None or a == 0:
         if b is None or b == 0:
-        
             x_1, x_2 = None, None
-            
         else:
-        
             x_1, x_2 = (-c/b), None
+            
+    # Checking if the roots are real
+    elif root < 0:
+        x_1, x_2 = None, None
+            
         
     elif root >0:
     
         if abs((4*a*c)/(b**2)) < 1e-4:
         
-            if b>0:
-                x_1 = (-b - np.sqrt(root))/(2*a)
-                x_2 = c/(a * x_1)
-            
-            elif b<0:
-                x_1 = (-b + np.sqrt(root))/(2*a)
-                x_2 = c/(a * x_1)
-                
-            else:
+            if b == 0:
                 x_1 =(-b - np.sqrt(root))/(2*a)
                 x_2 = (-b + np.sqrt(root))/(2*a)
-                
+        
+            else:
+                x_1 = x_1_form
+                x_2 = x_2_form
+        
+        else:
+            x_1 =(-b - np.sqrt(root))/(2*a)
+            x_2 = (-b + np.sqrt(root))/(2*a)
+            
                 
     elif root == 0:
     
         x_1 = -b/(2*a)
         x_2 = None
-        
-        
-    '''
-    # If the roots are real, we can implement this formula to avoid cancellation
-    
-    else:
-        x_1_form = (-b - np.sign(b) * np.sqrt(b**2 - 4*a*c))/(2*a)
-        x_2_form = c/(a * x_1_form)
-        
-        # When there are 2 real roots
-        if x_1_form < x_2_form:
-            x_1, x_2 = x_1_form, x_2_form
-            
-        elif x_1_form > x_2_form:
-            x_1, x_2 = x_2_form, x_1_form
-        
-        # When they are equal there is only 1 real root
-        else:
-            x_1, x_2 = x_1_form, None
         
             
     return x_1, x_2
