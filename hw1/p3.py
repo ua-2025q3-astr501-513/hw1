@@ -72,15 +72,6 @@ def quadratic(a, b, c):
     root = b**2 - 4*a*c
     x_1_p = (-b + np.sqrt(root))/(2*a)
     x_1_m = (-b - np.sqrt(root))/(2*a)
-    
-'''
-    # First for if there are any roots
-    if a is None or a == 0:
-        if b is None or b == 0:
-            x_1, x_2 = None, None
-        else:
-            x_1, x_2 = (-c/b), None
-'''
             
     # Checking if the roots are real
     if root < 0:
@@ -106,9 +97,7 @@ def quadratic(a, b, c):
             
     # if b^2 = 4ac, then there will only be 1 root
     elif root == 0:
-    
         x_1 = -b/(2*a)
-        x_2 = None
-        
+        x_2 = None    
             
     return x_1, x_2
