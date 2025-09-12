@@ -70,15 +70,17 @@ def quadratic(a, b, c):
     
     # Defining the formulas
     root = b**2 - 4*a*c
-    x_1_form = (-b + np.sign(b)* np.sqrt(root))/(2*a)
-    x_2_form = c/(a * x_1_form)
+    x_1_p = (-b + np.sqrt(root))/(2*a)
+    x_1_m = (-b - np.sqrt(root))/(2*a)
     
-    # First
+'''
+    # First for if there are any roots
     if a is None or a == 0:
         if b is None or b == 0:
             x_1, x_2 = None, None
         else:
             x_1, x_2 = (-c/b), None
+'''
             
     # Checking if the roots are real
     elif root < 0:
@@ -86,22 +88,23 @@ def quadratic(a, b, c):
             
         
     elif root >0:
-    
-        if abs((4*a*c)/(b**2)) < 1e-4:
+        # Checking if b^2 >> 4ac for the catastrophic cancellation to happen
+        if abs((4*a*c)/(b**2)) < 1e-4: # either b is +/-
         
-            if b == 0:
-                x_1 =(-b - np.sqrt(root))/(2*a)
-                x_2 = (-b + np.sqrt(root))/(2*a)
-        
-            else:
-                x_1 = x_1_form
-                x_2 = x_2_form
-        
+            if b < 0:
+                x_2 = x_1_p
+                x_1 = c/(a * x_2)
+                
+            elif b > 0:
+                x_1 = x_1_m
+                x_2 = c/(a * x_1)
+ 
+        # The general quadratic equation if no catastrophic cancellation
         else:
             x_1 =(-b - np.sqrt(root))/(2*a)
             x_2 = (-b + np.sqrt(root))/(2*a)
             
-                
+    # if b^2 = 4ac, then there will only be 1 root
     elif root == 0:
     
         x_1 = -b/(2*a)
@@ -109,4 +112,3 @@ def quadratic(a, b, c):
         
             
     return x_1, x_2
-
