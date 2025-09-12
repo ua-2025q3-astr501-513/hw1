@@ -83,7 +83,7 @@ def quadratic(a, b, c):
 '''
             
     # Checking if the roots are real
-    elif root < 0:
+    if root < 0:
         x_1, x_2 = None, None
             
         
